@@ -1,8 +1,6 @@
 # docdoc
 
-A new Flutter project.
-
-## Getting Started
+## 🎨 Systen design
 
 This project is a starting point for a Flutter application.
 
