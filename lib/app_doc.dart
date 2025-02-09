@@ -13,15 +13,14 @@ class AppDoc extends StatelessWidget {
       designSize: const Size(375, 812),
       minTextAdapt: true,
       child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'docdoc',
-        theme: ThemeData(
-          primaryColor: ColorsManager.primaryColor,
-          scaffoldBackgroundColor: Colors.white,
-        ),
-        initialRoute: Routes.onBoardingScreen,
-        onGenerateRoute: appRouter.generateRoute,
-      ),
+          debugShowCheckedModeBanner: false,
+          title: 'docdoc',
+          theme: ThemeData(
+            primaryColor: ColorsManager.primaryColor,
+            scaffoldBackgroundColor: Colors.white,
+          ),
+          initialRoute: Routes.onBoardingScreen,
+          onGenerateRoute: appRouter.generateRoute),
     );
   }
 }
