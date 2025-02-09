@@ -20,6 +20,7 @@ class AppDoc extends StatelessWidget {
             scaffoldBackgroundColor: Colors.white,
           ),
           initialRoute: Routes.onBoardingScreen,
+          //just fake line
           onGenerateRoute: appRouter.generateRoute),
     );
   }
