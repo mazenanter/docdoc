@@ -33,6 +33,8 @@ dependencies:
     sdk: flutter
   #State management
   flutter_bloc: ^9.0.0
+  #A build system for Dart code generation and modular compilation
+  build_runner: ^2.4.15
   #Code generator (mainly used with cubit & retrofit)
   freezed: ^2.5.8
   freezed_annotation: ^2.4.4
