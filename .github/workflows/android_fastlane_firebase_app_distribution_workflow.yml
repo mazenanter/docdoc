@@ -26,12 +26,24 @@ jobs:
     - name: Setup Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: "3.2" # استخدم Ruby 3.2
+        ruby-version: "3.2"
         working-directory: android
-        bundler-cache: false # إيقاف الكاش لمنع المشاكل
+        bundler-cache: false
 
     - name: Install Bundler
       run: gem install bundler
+
+    - name: Clean and Install Dependencies
+      run: |
+        cd android
+        rm -rf Gemfile.lock
+        bundle install --jobs 4 --retry 3
+
+    - name: Update Fastlane and Plugins
+      run: |
+        cd android
+        bundle exec fastlane update_plugins
+
     - name: Build and Distribute App
       env:
         FIREBASE_CLI_TOKEN: ${{ secrets.FIREBASE_CLI_TOKEN }}
