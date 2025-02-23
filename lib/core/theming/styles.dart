@@ -52,7 +52,12 @@ abstract class Styles {
   );
   static TextStyle font15DarkBlueMeduim = TextStyle(
     fontSize: 15.sp,
-    fontWeight: FontWeightHelper.regular,
+    fontWeight: FontWeightHelper.medium,
+    color: ColorsManager.darkBlue,
+  );
+  static TextStyle font18DarkBlueBold = TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeightHelper.bold,
     color: ColorsManager.darkBlue,
   );
   static TextStyle font16WhiteSemiBold = TextStyle(
@@ -84,5 +89,10 @@ abstract class Styles {
     fontSize: 13.sp,
     fontWeight: FontWeightHelper.medium,
     color: ColorsManager.darkBlue,
+  );
+  static TextStyle font12GrayRegular = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: ColorsManager.gray,
   );
 }
