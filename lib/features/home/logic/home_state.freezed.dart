@@ -365,10 +365,10 @@ class __$$SpecializationSuccessImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? specializationResponseModel = freezed,
+    Object? specializationResponseModel = null,
   }) {
     return _then(_$SpecializationSuccessImpl(
-      freezed == specializationResponseModel
+      null == specializationResponseModel
           ? _value.specializationResponseModel
           : specializationResponseModel // ignore: cast_nullable_to_non_nullable
               as SpecializationResponseModel,
@@ -394,14 +394,14 @@ class _$SpecializationSuccessImpl implements SpecializationSuccess {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SpecializationSuccessImpl &&
-            const DeepCollectionEquality().equals(
-                other.specializationResponseModel,
-                specializationResponseModel));
+            (identical(other.specializationResponseModel,
+                    specializationResponseModel) ||
+                other.specializationResponseModel ==
+                    specializationResponseModel));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(specializationResponseModel));
+  int get hashCode => Object.hash(runtimeType, specializationResponseModel);
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.
