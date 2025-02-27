@@ -1,53 +1,19 @@
-import 'package:docdoc/core/helpers/spacing.dart';
-import 'package:docdoc/core/theming/styles.dart';
+import 'package:docdoc/features/home/data/models/specialization_response_model.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'doctors_list_view_item.dart';
 
 class DoctoresListView extends StatelessWidget {
-  const DoctoresListView({super.key});
-
+  const DoctoresListView({super.key, required this.doctorsList});
+  final List<Doctors> doctorsList;
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: ListView.builder(
-        itemCount: 10,
+        itemCount: doctorsList.length,
         itemBuilder: (context, index) {
-          return Container(
-            margin: EdgeInsets.only(bottom: 16.h),
-            child: Row(
-              children: [
-                ClipRRect(
-                  child: Image.asset(
-                    width: 110.w,
-                    height: 120.h,
-                    'assets/images/Image (1).png',
-                  ),
-                ),
-                horizontalSpace(16),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Dr. Randy Wigham',
-                        style: Styles.font18DarkBlueBold,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                      verticalSpace(5),
-                      Text(
-                        'General | RSUD Gatot Subroto',
-                        style: Styles.font12GrayMeduim,
-                      ),
-                      verticalSpace(5),
-                      Text(
-                        '5 years experience',
-                        style: Styles.font12GrayMeduim,
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
+          return DoctorsListViewItem(
+            doctorsModel: doctorsList[index],
           );
         },
       ),

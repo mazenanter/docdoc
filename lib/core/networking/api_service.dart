@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:docdoc/core/networking/api_constants.dart';
+import 'package:docdoc/features/home/data/models/specialization_response_model.dart';
 import 'package:docdoc/features/login/data/models/login_request_body.dart';
 import 'package:docdoc/features/login/data/models/login_response.dart';
 import 'package:docdoc/features/signup/data/models/sign_up_response.dart';
@@ -22,4 +23,7 @@ abstract class ApiService {
   Future<SignUpResponse> signup(
     @Body() SignUpRequestBody signUpRequestBody,
   );
+
+  @GET(ApiConstants.specializationEP)
+  Future<SpecializationResponseModel> getSpecializations();
 }

@@ -1,10 +1,13 @@
-import 'package:docdoc/core/theming/colors_manager.dart';
-import 'package:docdoc/core/theming/styles.dart';
+import 'package:docdoc/features/home/data/models/specialization_response_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'specializatiosn_list_view_item.dart';
+
 class DoctorsSpecialityListView extends StatelessWidget {
-  const DoctorsSpecialityListView({super.key});
+  const DoctorsSpecialityListView(
+      {super.key, required this.specializationDataList});
+  final List<SpecializationData> specializationDataList;
 
   @override
   Widget build(BuildContext context) {
@@ -12,31 +15,11 @@ class DoctorsSpecialityListView extends StatelessWidget {
       height: 100.h,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: 8,
+        itemCount: specializationDataList.length,
         itemBuilder: (context, index) {
-          return Padding(
-            padding: EdgeInsetsDirectional.only(
-              start: index == 0 ? 0 : 24.w,
-            ),
-            child: Column(
-              children: [
-                CircleAvatar(
-                  radius: 28,
-                  backgroundColor: ColorsManager.offWhite,
-                  child: Image.asset(
-                    width: 24.w,
-                    'assets/images/Brain 1.png',
-                  ),
-                ),
-                const SizedBox(
-                  height: 8,
-                ),
-                Text(
-                  'Cardiology',
-                  style: Styles.font12DarkBlueRegular,
-                ),
-              ],
-            ),
+          return SpecializationsListViewItem(
+            specializationData: specializationDataList[index],
+            indexPadding: index,
           );
         },
       ),
