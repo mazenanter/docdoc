@@ -83,6 +83,7 @@ flutter:
     - assets/images/
     - assets/svgs/
     - assets/images/specializations_image/
+    - assets/images/doctors_images/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
   # For details regarding adding assets from package dependencies, see

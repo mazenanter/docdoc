@@ -13,6 +13,7 @@ class DoctoresListView extends StatelessWidget {
         itemCount: doctorsList.length,
         itemBuilder: (context, index) {
           return DoctorsListViewItem(
+            idnex: index,
             doctorsModel: doctorsList[index],
           );
         },
