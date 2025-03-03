@@ -1,3 +1,4 @@
+import 'package:docdoc/core/helpers/constants.dart';
 import 'package:docdoc/core/routing/app_router.dart';
 import 'package:docdoc/core/routing/routes.dart';
 import 'package:docdoc/core/theming/colors_manager.dart';
@@ -19,8 +20,7 @@ class AppDoc extends StatelessWidget {
             primaryColor: ColorsManager.primaryColor,
             scaffoldBackgroundColor: Colors.white,
           ),
-          initialRoute: Routes.onBoardingScreen,
-          //just fake line
+          initialRoute: isLoggedIn ? Routes.homeScreen : Routes.loginScreen,
           onGenerateRoute: appRouter.generateRoute),
     );
   }

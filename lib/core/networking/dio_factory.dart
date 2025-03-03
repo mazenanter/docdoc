@@ -21,11 +21,11 @@ class DioFactory {
     return dio!;
   }
 
-  static void addHeaders() {
+  static void addHeaders() async {
     dio?.options.headers = {
       'Accept': 'application/json',
       'Authorization':
-          'Bearer ${SharedPrefHelper.getString(SharedPrefKeys.TOKEN)}',
+          'Bearer ${await SharedPrefHelper.getString(SharedPrefKeys.TOKEN)}',
     };
   }
 
