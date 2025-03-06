@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theming/colors_manager.dart';
 import '../../../../core/theming/styles.dart';
 import '../../data/models/specialization_response_model.dart';
@@ -10,8 +11,9 @@ class SpecializationsListViewItem extends StatelessWidget {
     super.key,
     required this.specializationData,
     required this.indexPadding,
+    required this.currentIndex,
   });
-
+  final int currentIndex;
   final SpecializationData specializationData;
   final int indexPadding;
   @override
@@ -31,20 +33,40 @@ class SpecializationsListViewItem extends StatelessWidget {
       ),
       child: Column(
         children: [
-          CircleAvatar(
-            radius: 28,
-            backgroundColor: ColorsManager.offWhite,
-            child: Image.asset(
-              width: 24.w,
-              photos,
-            ),
-          ),
-          const SizedBox(
-            height: 8,
-          ),
+          currentIndex == indexPadding
+              ? Container(
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    border: Border.all(
+                      width: 1.5,
+                      color: ColorsManager.darkBlue,
+                    ),
+                  ),
+                  child: CircleAvatar(
+                    radius: 28,
+                    backgroundColor: ColorsManager.offWhite,
+                    child: Image.asset(
+                      width: 42.w,
+                      height: 42.h,
+                      photos,
+                    ),
+                  ),
+                )
+              : CircleAvatar(
+                  radius: 28,
+                  backgroundColor: ColorsManager.offWhite,
+                  child: Image.asset(
+                    width: 40.w,
+                    height: 40.h,
+                    photos,
+                  ),
+                ),
+          verticalSpace(8),
           Text(
             specializationData.name,
-            style: Styles.font12DarkBlueRegular,
+            style: currentIndex == indexPadding
+                ? Styles.font14DarkBlueBold
+                : Styles.font12DarkBlueRegular,
           ),
         ],
       ),
