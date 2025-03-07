@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:docdoc/core/networking/api_error_model.dart';
 import 'package:docdoc/features/signup/data/repo/signup_repo.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -20,7 +21,7 @@ class SignupCubit extends Cubit<SignupState> {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   void emitSignupStates() async {
-    emit(const SignupState.loading());
+    emit(const SignupState.signupLoading());
     final result = await signupRepo.signup(
       signUpRequestBody: SignUpRequestBody(
         email: emailController.text,
@@ -33,10 +34,10 @@ class SignupCubit extends Cubit<SignupState> {
     );
     result.when(
       success: (data) {
-        emit(SignupState.success(data));
+        emit(SignupState.signupSuccess(data));
       },
-      error: (error) {
-        emit(SignupState.error(message: error.apiErrorModel.message ?? ''));
+      error: (apiErrorModel) {
+        emit(SignupState.signupError(apiErrorModel));
       },
     );
   }

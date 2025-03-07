@@ -29,7 +29,8 @@ class SpecializationBlocBuilder extends StatelessWidget {
             var specializations = specializationResponseModel;
             return setupSuccess(specializations);
           },
-          specializationError: (message) => setupError(message),
+          specializationError: (message) =>
+              setupError(message.getAllErrorMessages()),
         );
       },
     );

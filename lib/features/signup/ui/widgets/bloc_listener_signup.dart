@@ -1,4 +1,5 @@
 import 'package:docdoc/core/helpers/extenstions.dart';
+import 'package:docdoc/core/networking/api_error_model.dart';
 import 'package:docdoc/core/routing/routes.dart';
 import 'package:docdoc/features/signup/logic/cubit/signup_cubit.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,7 @@ class BlocListenerSignup extends StatelessWidget {
           current is Loading || current is Error || current is Success,
       listener: (context, state) {
         state.whenOrNull(
-          loading: () {
+          signupLoading: () {
             showDialog(
               context: context,
               builder: (context) {
@@ -29,10 +30,10 @@ class BlocListenerSignup extends StatelessWidget {
               },
             );
           },
-          error: (message) {
+          signupError: (message) {
             setupError(context, message);
           },
-          success: (data) {
+          signupSuccess: (data) {
             context.pop();
             showDialog(
               context: context,
@@ -68,7 +69,7 @@ class BlocListenerSignup extends StatelessWidget {
     );
   }
 
-  void setupError(BuildContext context, String message) {
+  void setupError(BuildContext context, ApiErrorModel error) {
     context.pop();
     showDialog(
       context: context,
@@ -80,7 +81,7 @@ class BlocListenerSignup extends StatelessWidget {
             size: 32,
           ),
           content: Text(
-            message,
+            error.getAllErrorMessages(),
             style: Styles.font15DarkBlueMeduim,
           ),
           actions: [
