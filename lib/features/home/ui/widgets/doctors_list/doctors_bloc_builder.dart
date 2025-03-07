@@ -1,10 +1,10 @@
 import 'package:docdoc/features/home/data/models/specialization_response_model.dart';
-import 'package:docdoc/features/home/ui/widgets/doctores_list_view.dart';
+import 'package:docdoc/features/home/ui/widgets/doctors_list/doctores_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../logic/home_cubit.dart';
-import '../../logic/home_state.dart';
+import '../../../logic/home_cubit.dart';
+import '../../../logic/home_state.dart';
 
 class DoctorsBlocBuilder extends StatelessWidget {
   const DoctorsBlocBuilder({super.key});

@@ -1,13 +1,13 @@
 import 'package:docdoc/core/helpers/spacing.dart';
 import 'package:docdoc/features/home/data/models/specialization_response_model.dart';
-import 'package:docdoc/features/home/ui/widgets/doctors_shimmer_loading.dart';
-import 'package:docdoc/features/home/ui/widgets/speciality_shimmer_loading.dart';
-import 'package:docdoc/features/home/ui/widgets/specialization_list_view.dart';
+import 'package:docdoc/features/home/ui/widgets/doctors_list/doctors_shimmer_loading.dart';
+import 'package:docdoc/features/home/ui/widgets/specialization_list/speciality_shimmer_loading.dart';
+import 'package:docdoc/features/home/ui/widgets/specialization_list/specialization_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../logic/home_cubit.dart';
-import '../../logic/home_state.dart';
+import '../../../logic/home_cubit.dart';
+import '../../../logic/home_state.dart';
 
 class SpecializationBlocBuilder extends StatelessWidget {
   const SpecializationBlocBuilder({
