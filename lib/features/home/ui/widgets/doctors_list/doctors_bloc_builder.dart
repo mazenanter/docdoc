@@ -20,7 +20,7 @@ class DoctorsBlocBuilder extends StatelessWidget {
           doctorsSuccess: (doctorsList) {
             return setupSuccess(doctorsList);
           },
-          doctorsError: (message) => setupError(message),
+          doctorsError: () => setupError(),
         );
       },
     );
@@ -30,9 +30,7 @@ class DoctorsBlocBuilder extends StatelessWidget {
     return DoctoresListView(doctorsList: doctorsList);
   }
 
-  Widget setupError(String message) {
-    return Center(
-      child: Text(message),
-    );
+  Widget setupError() {
+    return const SizedBox.shrink();
   }
 }

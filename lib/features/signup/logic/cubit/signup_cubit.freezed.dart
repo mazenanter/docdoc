@@ -19,50 +19,50 @@ mixin _$SignupState<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(T data) success,
-    required TResult Function(String message) error,
+    required TResult Function() signupLoading,
+    required TResult Function(T data) signupSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel) signupError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(T data)? success,
-    TResult? Function(String message)? error,
+    TResult? Function()? signupLoading,
+    TResult? Function(T data)? signupSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? signupError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(T data)? success,
-    TResult Function(String message)? error,
+    TResult Function()? signupLoading,
+    TResult Function(T data)? signupSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? signupError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
-    required TResult Function(Loading<T> value) loading,
-    required TResult Function(Success<T> value) success,
-    required TResult Function(Error<T> value) error,
+    required TResult Function(Loading<T> value) signupLoading,
+    required TResult Function(Success<T> value) signupSuccess,
+    required TResult Function(Error<T> value) signupError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(Loading<T> value)? loading,
-    TResult? Function(Success<T> value)? success,
-    TResult? Function(Error<T> value)? error,
+    TResult? Function(Loading<T> value)? signupLoading,
+    TResult? Function(Success<T> value)? signupSuccess,
+    TResult? Function(Error<T> value)? signupError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
-    TResult Function(Loading<T> value)? loading,
-    TResult Function(Success<T> value)? success,
-    TResult Function(Error<T> value)? error,
+    TResult Function(Loading<T> value)? signupLoading,
+    TResult Function(Success<T> value)? signupSuccess,
+    TResult Function(Error<T> value)? signupError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -131,9 +131,9 @@ class _$InitialImpl<T> implements _Initial<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(T data) success,
-    required TResult Function(String message) error,
+    required TResult Function() signupLoading,
+    required TResult Function(T data) signupSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel) signupError,
   }) {
     return initial();
   }
@@ -142,9 +142,9 @@ class _$InitialImpl<T> implements _Initial<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(T data)? success,
-    TResult? Function(String message)? error,
+    TResult? Function()? signupLoading,
+    TResult? Function(T data)? signupSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? signupError,
   }) {
     return initial?.call();
   }
@@ -153,9 +153,9 @@ class _$InitialImpl<T> implements _Initial<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(T data)? success,
-    TResult Function(String message)? error,
+    TResult Function()? signupLoading,
+    TResult Function(T data)? signupSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? signupError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -168,9 +168,9 @@ class _$InitialImpl<T> implements _Initial<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
-    required TResult Function(Loading<T> value) loading,
-    required TResult Function(Success<T> value) success,
-    required TResult Function(Error<T> value) error,
+    required TResult Function(Loading<T> value) signupLoading,
+    required TResult Function(Success<T> value) signupSuccess,
+    required TResult Function(Error<T> value) signupError,
   }) {
     return initial(this);
   }
@@ -179,9 +179,9 @@ class _$InitialImpl<T> implements _Initial<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(Loading<T> value)? loading,
-    TResult? Function(Success<T> value)? success,
-    TResult? Function(Error<T> value)? error,
+    TResult? Function(Loading<T> value)? signupLoading,
+    TResult? Function(Success<T> value)? signupSuccess,
+    TResult? Function(Error<T> value)? signupError,
   }) {
     return initial?.call(this);
   }
@@ -190,9 +190,9 @@ class _$InitialImpl<T> implements _Initial<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
-    TResult Function(Loading<T> value)? loading,
-    TResult Function(Success<T> value)? success,
-    TResult Function(Error<T> value)? error,
+    TResult Function(Loading<T> value)? signupLoading,
+    TResult Function(Success<T> value)? signupSuccess,
+    TResult Function(Error<T> value)? signupError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -232,7 +232,7 @@ class _$LoadingImpl<T> implements Loading<T> {
 
   @override
   String toString() {
-    return 'SignupState<$T>.loading()';
+    return 'SignupState<$T>.signupLoading()';
   }
 
   @override
@@ -248,35 +248,35 @@ class _$LoadingImpl<T> implements Loading<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(T data) success,
-    required TResult Function(String message) error,
+    required TResult Function() signupLoading,
+    required TResult Function(T data) signupSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel) signupError,
   }) {
-    return loading();
+    return signupLoading();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(T data)? success,
-    TResult? Function(String message)? error,
+    TResult? Function()? signupLoading,
+    TResult? Function(T data)? signupSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? signupError,
   }) {
-    return loading?.call();
+    return signupLoading?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(T data)? success,
-    TResult Function(String message)? error,
+    TResult Function()? signupLoading,
+    TResult Function(T data)? signupSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? signupError,
     required TResult orElse(),
   }) {
-    if (loading != null) {
-      return loading();
+    if (signupLoading != null) {
+      return signupLoading();
     }
     return orElse();
   }
@@ -285,35 +285,35 @@ class _$LoadingImpl<T> implements Loading<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
-    required TResult Function(Loading<T> value) loading,
-    required TResult Function(Success<T> value) success,
-    required TResult Function(Error<T> value) error,
+    required TResult Function(Loading<T> value) signupLoading,
+    required TResult Function(Success<T> value) signupSuccess,
+    required TResult Function(Error<T> value) signupError,
   }) {
-    return loading(this);
+    return signupLoading(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(Loading<T> value)? loading,
-    TResult? Function(Success<T> value)? success,
-    TResult? Function(Error<T> value)? error,
+    TResult? Function(Loading<T> value)? signupLoading,
+    TResult? Function(Success<T> value)? signupSuccess,
+    TResult? Function(Error<T> value)? signupError,
   }) {
-    return loading?.call(this);
+    return signupLoading?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
-    TResult Function(Loading<T> value)? loading,
-    TResult Function(Success<T> value)? success,
-    TResult Function(Error<T> value)? error,
+    TResult Function(Loading<T> value)? signupLoading,
+    TResult Function(Success<T> value)? signupSuccess,
+    TResult Function(Error<T> value)? signupError,
     required TResult orElse(),
   }) {
-    if (loading != null) {
-      return loading(this);
+    if (signupLoading != null) {
+      return signupLoading(this);
     }
     return orElse();
   }
@@ -366,7 +366,7 @@ class _$SuccessImpl<T> implements Success<T> {
 
   @override
   String toString() {
-    return 'SignupState<$T>.success(data: $data)';
+    return 'SignupState<$T>.signupSuccess(data: $data)';
   }
 
   @override
@@ -393,35 +393,35 @@ class _$SuccessImpl<T> implements Success<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(T data) success,
-    required TResult Function(String message) error,
+    required TResult Function() signupLoading,
+    required TResult Function(T data) signupSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel) signupError,
   }) {
-    return success(data);
+    return signupSuccess(data);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(T data)? success,
-    TResult? Function(String message)? error,
+    TResult? Function()? signupLoading,
+    TResult? Function(T data)? signupSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? signupError,
   }) {
-    return success?.call(data);
+    return signupSuccess?.call(data);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(T data)? success,
-    TResult Function(String message)? error,
+    TResult Function()? signupLoading,
+    TResult Function(T data)? signupSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? signupError,
     required TResult orElse(),
   }) {
-    if (success != null) {
-      return success(data);
+    if (signupSuccess != null) {
+      return signupSuccess(data);
     }
     return orElse();
   }
@@ -430,35 +430,35 @@ class _$SuccessImpl<T> implements Success<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
-    required TResult Function(Loading<T> value) loading,
-    required TResult Function(Success<T> value) success,
-    required TResult Function(Error<T> value) error,
+    required TResult Function(Loading<T> value) signupLoading,
+    required TResult Function(Success<T> value) signupSuccess,
+    required TResult Function(Error<T> value) signupError,
   }) {
-    return success(this);
+    return signupSuccess(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(Loading<T> value)? loading,
-    TResult? Function(Success<T> value)? success,
-    TResult? Function(Error<T> value)? error,
+    TResult? Function(Loading<T> value)? signupLoading,
+    TResult? Function(Success<T> value)? signupSuccess,
+    TResult? Function(Error<T> value)? signupError,
   }) {
-    return success?.call(this);
+    return signupSuccess?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
-    TResult Function(Loading<T> value)? loading,
-    TResult Function(Success<T> value)? success,
-    TResult Function(Error<T> value)? error,
+    TResult Function(Loading<T> value)? signupLoading,
+    TResult Function(Success<T> value)? signupSuccess,
+    TResult Function(Error<T> value)? signupError,
     required TResult orElse(),
   }) {
-    if (success != null) {
-      return success(this);
+    if (signupSuccess != null) {
+      return signupSuccess(this);
     }
     return orElse();
   }
@@ -482,7 +482,7 @@ abstract class _$$ErrorImplCopyWith<T, $Res> {
           _$ErrorImpl<T> value, $Res Function(_$ErrorImpl<T>) then) =
       __$$ErrorImplCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({String message});
+  $Res call({ApiErrorModel apiErrorModel});
 }
 
 /// @nodoc
@@ -498,13 +498,13 @@ class __$$ErrorImplCopyWithImpl<T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? message = null,
+    Object? apiErrorModel = null,
   }) {
     return _then(_$ErrorImpl<T>(
-      message: null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
+      null == apiErrorModel
+          ? _value.apiErrorModel
+          : apiErrorModel // ignore: cast_nullable_to_non_nullable
+              as ApiErrorModel,
     ));
   }
 }
@@ -512,14 +512,14 @@ class __$$ErrorImplCopyWithImpl<T, $Res>
 /// @nodoc
 
 class _$ErrorImpl<T> implements Error<T> {
-  const _$ErrorImpl({required this.message});
+  const _$ErrorImpl(this.apiErrorModel);
 
   @override
-  final String message;
+  final ApiErrorModel apiErrorModel;
 
   @override
   String toString() {
-    return 'SignupState<$T>.error(message: $message)';
+    return 'SignupState<$T>.signupError(apiErrorModel: $apiErrorModel)';
   }
 
   @override
@@ -527,11 +527,12 @@ class _$ErrorImpl<T> implements Error<T> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ErrorImpl<T> &&
-            (identical(other.message, message) || other.message == message));
+            (identical(other.apiErrorModel, apiErrorModel) ||
+                other.apiErrorModel == apiErrorModel));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, message);
+  int get hashCode => Object.hash(runtimeType, apiErrorModel);
 
   /// Create a copy of SignupState
   /// with the given fields replaced by the non-null parameter values.
@@ -545,35 +546,35 @@ class _$ErrorImpl<T> implements Error<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(T data) success,
-    required TResult Function(String message) error,
+    required TResult Function() signupLoading,
+    required TResult Function(T data) signupSuccess,
+    required TResult Function(ApiErrorModel apiErrorModel) signupError,
   }) {
-    return error(message);
+    return signupError(apiErrorModel);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(T data)? success,
-    TResult? Function(String message)? error,
+    TResult? Function()? signupLoading,
+    TResult? Function(T data)? signupSuccess,
+    TResult? Function(ApiErrorModel apiErrorModel)? signupError,
   }) {
-    return error?.call(message);
+    return signupError?.call(apiErrorModel);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(T data)? success,
-    TResult Function(String message)? error,
+    TResult Function()? signupLoading,
+    TResult Function(T data)? signupSuccess,
+    TResult Function(ApiErrorModel apiErrorModel)? signupError,
     required TResult orElse(),
   }) {
-    if (error != null) {
-      return error(message);
+    if (signupError != null) {
+      return signupError(apiErrorModel);
     }
     return orElse();
   }
@@ -582,44 +583,44 @@ class _$ErrorImpl<T> implements Error<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
-    required TResult Function(Loading<T> value) loading,
-    required TResult Function(Success<T> value) success,
-    required TResult Function(Error<T> value) error,
+    required TResult Function(Loading<T> value) signupLoading,
+    required TResult Function(Success<T> value) signupSuccess,
+    required TResult Function(Error<T> value) signupError,
   }) {
-    return error(this);
+    return signupError(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(Loading<T> value)? loading,
-    TResult? Function(Success<T> value)? success,
-    TResult? Function(Error<T> value)? error,
+    TResult? Function(Loading<T> value)? signupLoading,
+    TResult? Function(Success<T> value)? signupSuccess,
+    TResult? Function(Error<T> value)? signupError,
   }) {
-    return error?.call(this);
+    return signupError?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
-    TResult Function(Loading<T> value)? loading,
-    TResult Function(Success<T> value)? success,
-    TResult Function(Error<T> value)? error,
+    TResult Function(Loading<T> value)? signupLoading,
+    TResult Function(Success<T> value)? signupSuccess,
+    TResult Function(Error<T> value)? signupError,
     required TResult orElse(),
   }) {
-    if (error != null) {
-      return error(this);
+    if (signupError != null) {
+      return signupError(this);
     }
     return orElse();
   }
 }
 
 abstract class Error<T> implements SignupState<T> {
-  const factory Error({required final String message}) = _$ErrorImpl<T>;
+  const factory Error(final ApiErrorModel apiErrorModel) = _$ErrorImpl<T>;
 
-  String get message;
+  ApiErrorModel get apiErrorModel;
 
   /// Create a copy of SignupState
   /// with the given fields replaced by the non-null parameter values.

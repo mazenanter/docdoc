@@ -1,4 +1,5 @@
 import 'package:docdoc/core/helpers/extenstions.dart';
+import 'package:docdoc/core/networking/api_error_model.dart';
 import 'package:docdoc/core/theming/colors_manager.dart';
 import 'package:docdoc/core/theming/styles.dart';
 import 'package:docdoc/features/login/logic/cubit/login_cubit.dart';
@@ -18,7 +19,7 @@ class LoginBlocListener extends StatelessWidget {
           current is Loading || current is Success || current is Error,
       listener: (context, state) {
         state.whenOrNull(
-          loading: () {
+          loginLoading: () {
             showDialog(
               context: context,
               builder: (context) {
@@ -30,12 +31,12 @@ class LoginBlocListener extends StatelessWidget {
               },
             );
           },
-          success: (loginResponseBody) {
+          loginSuccess: (loginResponseBody) {
             context.pop();
             context.pushNamed(Routes.homeScreen);
           },
-          error: (message) {
-            setupError(context, message);
+          loginError: (error) {
+            setupError(context, error);
           },
         );
       },
@@ -43,7 +44,7 @@ class LoginBlocListener extends StatelessWidget {
     );
   }
 
-  void setupError(BuildContext context, String message) {
+  void setupError(BuildContext context, ApiErrorModel error) {
     context.pop();
     showDialog(
       context: context,
@@ -55,7 +56,7 @@ class LoginBlocListener extends StatelessWidget {
             size: 32,
           ),
           content: Text(
-            message,
+            error.getAllErrorMessages(),
             style: Styles.font15DarkBlueMeduim,
           ),
           actions: [
